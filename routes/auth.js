@@ -5,7 +5,7 @@ const UserModel= require('../models/User');
 //Bcrypt for hashing Passwords
 const bcrypt=require('bcrypt');
 //Importing custom Validator defined in Validator.js
-const {registerValidator,loginValidator}=require('../Utils/Validator') 
+const {registerValidator,loginValidator}=require('../utils/Validator') 
 //Importing JSON WEB TOKEN library
 const jwt=require('jsonwebtoken');
 
@@ -97,7 +97,7 @@ try {
             res.header({
                 "auth-token":authToken
             })
-            
+
             return res.status(201).send({
                 "success":true,
                 "msg":"User Logged In Successfully",

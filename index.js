@@ -2,7 +2,7 @@
 var express=require('express')
 var mongoose = require('mongoose')
 const dotenv=require('dotenv');
-const {isAuthorized} =require('./Utils/Authorization')
+const {isAuthorized} =require('./utils/Authorization')
 
 //Initiating Express application
 var app=express();
