@@ -1,11 +1,14 @@
-const authRouter=require('express').Router();
-const UserModel= require('../models/User');
+//Router
+const authRouter=require('express').Router(); 
+//Model for User
+const UserModel= require('../models/User'); 
+//Bcrypt for hashing Passwords
 const bcrypt=require('bcrypt');
-const {registerValidator,loginValidator}=require('../Utils/Validator')
+//Importing custom Validator defined in Validator.js
+const {registerValidator,loginValidator}=require('../Utils/Validator') 
 
 //Register Route
 authRouter.post('/register',async function(req,res){
-
 
 try {
 
@@ -52,12 +55,10 @@ try {
 }
 })
 
-
-//Register Route
+//Login Route
 authRouter.post('/login',async function(req,res){
 
 try {
-
     //Validation
     const {error}=loginValidator(req.body);
     if(error)
@@ -75,12 +76,16 @@ try {
         "success":false,
         "msg":"User Not Found"
      })
+
+     //Compare Passwords
      bcrypt.compare(req.body.password,user.password,function(error,isSame){
-         if(error)
+        //Error Handling 
+        if(error)
             res.status(400).send({
                 "success":false,
                 "msg":error
         })
+        //If Passwords are same
         if(isSame)
             return res.status(201).send({
                 "success":true,
@@ -88,6 +93,7 @@ try {
                 "auth-token":null,
                 "id":user._id
             })
+        //If Passwords are not same
         else
             res.status(401).send({
         "success":false,
@@ -104,4 +110,5 @@ try {
 }
 })
 
+//Exporting Router to access in other files
 module.exports =authRouter;

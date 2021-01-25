@@ -1,5 +1,7 @@
+//Importing Joi Validator Package
 const JoiValidator= require('joi');
 
+//Custom Validator function for Register Route
 const registerValidator= (data)=>{
     const validatorSchema=JoiValidator.object(
         {
@@ -10,6 +12,7 @@ const registerValidator= (data)=>{
     )
     return validatorSchema.validate(data)
 }
+//Custom Validator function for Login Route
 const loginValidator= (data)=>{
     const validatorSchema=JoiValidator.object(
         {
@@ -20,5 +23,6 @@ const loginValidator= (data)=>{
     return validatorSchema.validate(data)
 }
 
+//Exporting Validator Modules for access in other files
 module.exports.registerValidator=registerValidator;
 module.exports.loginValidator=loginValidator;

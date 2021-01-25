@@ -1,5 +1,7 @@
+//Importing Mongoose 
 const mongoose = require('mongoose')
 
+//User Schema for User Profile
 const UserSchema=new mongoose.Schema({
     name:{
         type:String,
@@ -32,4 +34,5 @@ const UserSchema=new mongoose.Schema({
 
 });
 
+//Exporting User Schema module for access in other files
 module.exports=mongoose.model('User',UserSchema,'users_cred_data')

@@ -1,11 +1,15 @@
+//Importing required libraries
 var express=require('express')
 var mongoose = require('mongoose')
 const dotenv=require('dotenv');
 
+//Initiating Express application
 var app=express();
+
+//Configuring dotenv for accessing Environment Variables
 dotenv.config();
 
-
+//Declaring PORT (Selects PORT 3000 if its free or Select the next available PORT)
 const PORT = 3000 || process.env.PORT
 
 //BodyParser MiddleWare
