@@ -1,0 +1,12 @@
+{
+  "name": "Auth-api-JWT-demo",
+  "version": "1.0.0",
+  "description": "This is a demo api for Authentication with JWT",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Jerry S Joseph",
+  "license": "ISC"
+}
