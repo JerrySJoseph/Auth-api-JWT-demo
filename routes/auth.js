@@ -45,7 +45,6 @@ try {
     const response={
         "success":true,
         "msg":"User created Successfully",
-        "auth-token":null,
         "id":savedUser._id
     }
     res.status(201).send(response)
@@ -89,12 +88,24 @@ try {
         })
         //If Passwords are same
         if(isSame)
+        {
+            //Creating AuthToken by JWT
+            const secret=Buffer.from(process.env.JWT_SECRET).toString('base64');
+            const authToken=jwt.sign({_id:user._id},secret)
+           
+            //Setting token to header
+            res.header({
+                "auth-token":authToken
+            })
+            
             return res.status(201).send({
                 "success":true,
                 "msg":"User Logged In Successfully",
-                "auth-token":null,
                 "id":user._id
             })
+        }
+    
+            
         //If Passwords are not same
         else
             res.status(401).send({

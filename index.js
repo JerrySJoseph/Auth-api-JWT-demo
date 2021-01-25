@@ -2,6 +2,7 @@
 var express=require('express')
 var mongoose = require('mongoose')
 const dotenv=require('dotenv');
+const {isAuthorized} =require('./Utils/Authorization')
 
 //Initiating Express application
 var app=express();
@@ -30,6 +31,9 @@ const authRouter=require('./routes/auth')
 
 //Routing to Routes
 app.use('/api/auth',authRouter)
+app.use('/api/post',isAuthorized,(req,res)=>{
+    res.send("DATA")
+})
 
 
 //Listening to PORT 3000 or process.env.PORT at localhost
