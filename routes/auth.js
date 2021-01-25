@@ -1,4 +1,4 @@
-//Router
+//Importing Router from express
 const authRouter=require('express').Router(); 
 //Model for User
 const UserModel= require('../models/User'); 
