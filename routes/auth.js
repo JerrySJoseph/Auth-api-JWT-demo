@@ -6,6 +6,8 @@ const UserModel= require('../models/User');
 const bcrypt=require('bcrypt');
 //Importing custom Validator defined in Validator.js
 const {registerValidator,loginValidator}=require('../Utils/Validator') 
+//Importing JSON WEB TOKEN library
+const jwt=require('jsonwebtoken');
 
 //Register Route
 authRouter.post('/register',async function(req,res){
