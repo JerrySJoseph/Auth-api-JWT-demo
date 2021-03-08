@@ -3,20 +3,20 @@ POST http://localhost:3000/api/auth/register
 Content-Type: application/json
 
 {
-    "email":"jerin.sebastian153@gmail.com",
-    "password":"123456",
-    "name":"Jerin Sebastian"
+    "email":"useremail@gmail.com",
+    "password":"some strong password",
+    "name":"user full name"
 }
 
 ### login request 
 POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 {
-    "email":"jerin.sebastian153@gmail.com",
-    "password":"123456"
+    "email":"useremail@gmail.com",
+    "password":"some strong password"
 }
 
 ### authorized routes
 GET http://localhost:3000/api/post
 Content-Type: application/json
-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDQ1YTQ2MzdkODQ1OTBjYTA2NmI4MzkiLCJpYXQiOjE2MTUxNzg1OTR9.IKoTPeE3Py1yLLSn8gGOcou0XTPm23XtcdpJ8giXePI
+auth-token: auth-token you recieve in header
