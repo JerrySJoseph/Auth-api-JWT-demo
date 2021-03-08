@@ -37,4 +37,4 @@ app.use('/api/post',isAuthorized,(req,res)=>{
 
 
 //Listening to PORT 3000 or process.env.PORT at localhost
-app.listen(PORT,()=>console.log("Auth Server is Up and Running on localhost with CI/CD:"+PORT));
+app.listen(PORT,()=>console.log("Auth Server is Up and Running on localhost on port :"+PORT));
